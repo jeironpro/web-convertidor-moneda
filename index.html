@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convertidor De Monedas</title>
+    <link rel="icon" href="icon/convertirMoneda.png">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <main>
+        <div class="contenedor">
+            <h1>Convertidor De Monedas</h1>
+            <div class="dea">
+                <div class="dep">
+                    <p>DE</p>
+                    <div class="de">
+                        <select id="selectDe"></select>
+                    </div>
+                </div>
+                <div id="icono" class="icono">
+                    <i class="fas fa-exchange"></i>
+                </div>
+                <div class="ap">
+                    <p>A</p>
+                    <div class="a">
+                        <select id="selectA"></select>
+                    </div>
+                </div>
+            </div>
+            <div class="cantidad">
+                <input type="text" id="cantidad" placeholder="Escriba la cantidad">
+            </div>
+            <div class="boton">
+                <button>Realizar conversi&oacute;n</button>
+            </div>
+            <div id="resultado"></div>
+        </div>
+    </main>
+    <script src="app.js"></script>
+    <script src="https://kit.fontawesome.com/25da21ab57.js" crossorigin="anonymous"></script>
+</body>
+</html>
