@@ -6,8 +6,8 @@ async function tasaCambio() {
 
 async function monedasSelect() {
     const obtenerTasaCambio = await tasaCambio();
-    const selectDesde = document.getElementById('selectDe');
-    const selectHasta = document.getElementById('selectA');
+    const selectDesde = document.getElementById('selector-origen');
+    const selectHasta = document.getElementById('selector-destino');
 
     selectDesde.innerHTML = '';
     selectHasta.innerHTML = '';
@@ -29,28 +29,28 @@ async function monedasSelect() {
 
 async function convertirMoneda() {
     const obtenerTasaCambio = await tasaCambio();
-    const monedaDesde = document.querySelector('.de select').value;
-    const monedaHasta = document.querySelector('.a select').value;
-    const cantidad = document.getElementById('cantidad').value;
+    const monedaDesde = document.getElementById('selector-origen').value;
+    const monedaHasta = document.getElementById('selector-destino').value;
+    const cantidad = document.getElementById('input-cantidad').value;
 
     const tasaCambioDesde = obtenerTasaCambio[monedaDesde];
     const tasaCambioHasta = obtenerTasaCambio[monedaHasta];
     const conversion = (cantidad / tasaCambioDesde) * tasaCambioHasta;
 
-    document.getElementById('resultado').innerText = `${cantidad} ${monedaDesde} = ${conversion.toFixed(2)} ${monedaHasta}`;
+    document.getElementById('caja-resultado').innerText = `${cantidad} ${monedaDesde} = ${conversion.toFixed(2)} ${monedaHasta}`;
 }
 
 function cambiarMoneda() {
-    const selectDesde = document.getElementById('selectDe');
-    const selectHasta = document.getElementById('selectA');
+    const selectDesde = document.getElementById('selector-origen');
+    const selectHasta = document.getElementById('selector-destino');
     const selectDesdeValor = selectDesde.value;
 
     selectDesde.value = selectHasta.value;
     selectHasta.value = selectDesdeValor;
 }
 
-document.querySelector('.boton button').addEventListener('click', convertirMoneda);
-document.getElementById('icono').addEventListener('click', cambiarMoneda);
+document.querySelector('.boton-convertir').addEventListener('click', convertirMoneda);
+document.getElementById('control-intercambio').addEventListener('click', cambiarMoneda);
 window.onload = () => {
     monedasSelect();
 }
