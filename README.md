@@ -1,4 +1,4 @@
-# convertidor-moneda
+# web-convertidor-moneda
 
 ## 📌 Descripción
 Este proyecto forma parte de mi portafolio personal.  
